@@ -10,12 +10,12 @@ with open('LICENSE') as f:
     license_text = f.read()
 
 setup(
-    project_name='service-data-etl',
-    project_version='0.0.2',
-    description='In this project, we want to build the platform to do the data etl.',
+    project_name='service-restfulapi-evaluation',
+    project_version='0.0.3',
+    description='In this project, we want to build the platform to do the evaluation.',
     long_description=readme_text,
     author='Simon Liu',
-    url='https://github.com/LiuYuWei/kaggle-titanichttps://github.com/LiuYuWei/Service-data-etl',
+    url='https://github.com/LiuYuWei/service-restfulapi-evaluation',
     license=license_text,
     packages=find_packages(exclude=('tests'))
 )
