@@ -50,3 +50,33 @@ class ConfusionMatrixRecordDao:
         df = pd.DataFrame.from_dict(data_dict, orient = 'index').T
         df.columns = data_dict.keys()
         df.to_sql(table_name, con=self.sqlite_engine, if_exists='append', index=False)
+    
+    def setting_confusion_matrix_database(self):
+        self.create_connection()
+        create_confusion_matrix_sql = """ CREATE TABLE IF NOT EXISTS confusion_matrix (
+                                timestamp datetime PRIMARY KEY NOT NULL,
+                                number_data integer NOT NULL,
+                                tp integer NOT NULL,
+                                fp integer NOT NULL,
+                                tn integer NOT NULL,
+                                fn integer NOT NULL);
+                           """
+        self.create_table(
+            create_confusion_matrix_sql)
+        create_accuracy_sql = """ CREATE TABLE IF NOT EXISTS accuracy_score (
+                                timestamp datetime PRIMARY KEY NOT NULL,
+                                cm_timestamp datetime NOT NULL,
+                                number_data integer NOT NULL,
+                                accuracy_score float NOT NULL);
+                           """
+        self.create_table(
+            create_accuracy_sql)
+        create_precision_recall_sql = """ CREATE TABLE IF NOT EXISTS precision_recall_score (
+                                timestamp datetime PRIMARY KEY NOT NULL,
+                                cm_timestamp datetime NOT NULL,
+                                number_data integer NOT NULL,
+                                precision_score float NOT NULL
+                                recall_score float NOT NULL);
+                           """
+        self.create_table(
+            create_precision_recall_sql)
