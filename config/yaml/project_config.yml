@@ -1,22 +1,5 @@
 project:
   path: '' #your project develope path
 
-extract:
-  train_file: "data/original/train.csv"
-  test_file: "data/original/test.csv"
-  train_label: "Survived"
-
-transform:
-  drop_columns: ["Survived", "Name", "Ticket", "SibSp", "Parch", "PassengerId"]
-
-load_to:
-  save_file_path: "data/preprocessing"
-
-knn:
-  n_neighbors: 13
-
-rf:
-  n_estimators: 13
-
-predict:
-  model_path: "training_model_svm.pkl"
+sqlite:
+  file_path: "data/database/evaluation.db"

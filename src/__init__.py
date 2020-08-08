@@ -6,6 +6,7 @@ from fastapi import FastAPI
 # import project package.
 from config.config_setting import ConfigSetting
 from src.blueprint.api_router import create_api_router
+from src.blueprint.confusion_matrix_router import create_confusion_matrix_router
 
 def create_app(unittest=False):
     """The function to creates the fastapi service."""
@@ -18,6 +19,9 @@ def create_app(unittest=False):
 
     api_router = create_api_router()
     app.include_router(api_router, prefix="/api", tags=["api"])
+
+    confusion_matrix_router = create_confusion_matrix_router()
+    app.include_router(confusion_matrix_router, prefix="/confusion_matrix", tags=["confusion_matrix"])
 
     log.info("Start the fastapi service.")
     return app
