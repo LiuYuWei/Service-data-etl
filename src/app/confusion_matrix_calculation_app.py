@@ -22,6 +22,11 @@ class ConfusionMatrixCalculationApp:
         payload = self.confusion_matrix_calculation_service.confusion_matrix_calculation(
             y_true, y_pred)
         return payload
+    
+    def get_confusion_matrix_html(self, y_true, y_pred):
+        html = self.confusion_matrix_calculation_service.confusion_matrix_calculation_html(
+            y_true, y_pred)
+        return html
 
     def confusion_matrix_to_accuracy_value(self, confusion_matrix):
         payload = self.confusion_matrix_calculation_service.accuracy_calculation(

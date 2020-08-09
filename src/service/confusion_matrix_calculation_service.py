@@ -1,6 +1,7 @@
 """Confusion matrix calculation service."""
 # coding=utf-8
 # import relation package.
+import pandas as pd
 import datetime
 import json
 import sqlite3
@@ -29,6 +30,13 @@ class ConfusionMatrixCalculationService:
             fp), "tn": int(tn), "fn": int(fn), "timestamp": datetime.datetime.now().isoformat()}
         self.confusion_matrix_record_dao.save_data(payload, "confusion_matrix")
         return payload
+    
+    def confusion_matrix_calculation_html(self, y_true, y_pred):
+        y_true = pd.Series(y_true, name='Actual')
+        y_pred = pd.Series(y_pred, name='Predicted')
+        df_confusion = pd.crosstab(y_true, y_pred, rownames=['Actual'], colnames=['Predicted'], margins=True)
+        html = df_confusion.to_html()
+        return html
 
     def accuracy_calculation(self, confusion_matrix):
         total_number = (confusion_matrix['tp'] + confusion_matrix['tn'] +

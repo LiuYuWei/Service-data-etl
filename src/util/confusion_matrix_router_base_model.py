@@ -13,3 +13,8 @@ class ConfusionMatrixBaseModel(BaseModel):
     fn: int
     number_data: int
     timestamp: str
+
+class YValueBaseModel(BaseModel):
+    """The input of change direction"""
+    y_true: list
+    y_pred: list
