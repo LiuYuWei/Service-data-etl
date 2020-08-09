@@ -1,4 +1,10 @@
-# service-restfulapi-evaluation
+# sidata.ai platform project
+
+You can see here to know about the `sidata.ai` platform.
+
+https://liuyuwei.github.io/sidata.ai/
+
+## service-restfulapi-evaluation
 You can use this service to get the evaluation easily.
 
 - You can get the evaluation:
@@ -6,7 +12,7 @@ You can use this service to get the evaluation easily.
   - [x] Accuracy
   - [x] Precision/Recall
 
-## How to use it?
+### How to use it?
 
 - Please use docker to start the service.
 ```bash
@@ -32,8 +38,8 @@ http://{ip-address}:8080/
 
 ![image](demo/sqlite_db_ui.png)
 
-## Version, author and other information:
+### Version, author and other information:
 - See the relation information in [setup file](setup.py).
 
-## License
+### License
 - See License file [here](LICENSE).
