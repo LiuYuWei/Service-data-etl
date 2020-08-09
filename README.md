@@ -1,4 +1,4 @@
-# service-structure-data-extract
+# service-restfulapi-evaluation
 You can use this service to get the evaluation easily.
 
 - You can get the evaluation:
@@ -24,9 +24,13 @@ $ ./docker_remove_service.sh
 
 http://{ip-address}:8000/docs
 
+![image](demo/swagger_ui.png)
+
 - sqlite website visualization:
 
 http://{ip-address}:8080/
+
+![image](demo/sqlite_db_ui.png)
 
 ## Version, author and other information:
 - See the relation information in [setup file](setup.py).
