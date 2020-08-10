@@ -4,7 +4,7 @@ You can see here to know about the `sidata.ai` platform.
 
 https://liuyuwei.github.io/sidata.ai/
 
-## service-restfulapi-evaluation
+## service-data-evaluation-analysis
 You can use this service to get the evaluation easily.
 
 - You can get the evaluation:
