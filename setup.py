@@ -10,12 +10,12 @@ with open('LICENSE') as f:
     license_text = f.read()
 
 setup(
-    project_name='service-restfulapi-evaluation',
+    project_name='service-data-evaluation-analysis',
     project_version='0.1.2',
     description='In this project, we want to build the platform to do the evaluation.',
     long_description=readme_text,
     author='Simon Liu',
-    url='https://github.com/LiuYuWei/service-restfulapi-evaluation',
+    url='https://github.com/LiuYuWei/service-data-evaluation-analysis',
     license=license_text,
     packages=find_packages(exclude=('tests'))
 )
